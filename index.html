@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Aplikasi Ujian Online — 4 jenis soal, PIN sesi, anti-curang, bank soal terintegrasi, koreksi esai & unduh PDF.">
+<title>Ujian Online v3</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="boot">
+
+<!-- ============ HALAMAN LOGIN ============ -->
+<div id="login" class="login">
+  <div class="lg-card">
+    <div class="lg-head">
+      <img id="lg-logo" class="lg-logo" alt="logo">
+      <h1 id="lg-title">Ujian Online</h1>
+      <p id="lg-sub">SMP Nusantara</p>
+    </div>
+    <div class="seg" id="lg-tabs">
+      <button type="button" class="on" data-r="guru">Guru / Admin</button>
+      <button type="button" data-r="siswa">Siswa</button>
+    </div>
+    <form id="lg-form" autocomplete="off">
+      <label class="lab">Username<input class="inp" id="lg-user" placeholder="masukkan username" required></label>
+      <label class="lab">Password<input class="inp" type="password" id="lg-pass" placeholder="masukkan password" required></label>
+      <button class="btn pri lg-btn" type="submit">Masuk</button>
+    </form>
+    <div class="lg-demo">
+      <b>Akun demo</b><br>
+      Admin: <code>admin / admin123</code> &nbsp;·&nbsp; Guru: <code>guru / guru123</code><br>
+      Siswa: <code>andi / siswa123</code> (7A) · <code>sari / siswa123</code> (7A) · <code>rudi / siswa123</code> (7B) · <code>fitri / siswa123</code> (8A)
+    </div>
+  </div>
+  <div class="lg-foot">Ujian Online v3 · dibuat untuk sekolah, madrasah &amp; lembaga kursus</div>
+</div>
+
+<!-- ============ SHELL APLIKASI ============ -->
+<div id="shell" class="shell hidden">
+  <aside class="sb" id="sidebar">
+    <div class="brand">
+      <img id="sb-logo" alt="logo">
+      <div class="brand-txt"><b id="sb-title">Ujian Online</b><span id="sb-sub">SMP Nusantara</span></div>
+    </div>
+    <nav id="nav" class="nav"></nav>
+    <div class="who">
+      <div class="av" id="who-av">?</div>
+      <div class="who-txt"><b id="who-name">—</b><span id="who-role">—</span></div>
+      <button class="icon-btn" id="btn-logout" title="Keluar"></button>
+    </div>
+  </aside>
+  <div class="sb-overlay" id="sb-overlay"></div>
+  <main class="main">
+    <button class="hamb" id="btn-hamb" title="Menu"></button>
+    <div id="view" class="view"></div>
+  </main>
+</div>
+
+<!-- ============ LAYAR UJIAN (siswa) ============ -->
+<div id="exam" class="exam hidden"></div>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+<div id="print-area"></div>
+
+<script src="js/core.js"></script>
+<script src="js/store.js"></script>
+<script src="js/admin-jadwal.js"></script>
+<script src="js/admin-hasil.js"></script>
+<script src="js/exam.js"></script>
+<script src="js/remote.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
